@@ -13,6 +13,8 @@ services:
     extends:
       file: docker-compose.base.yml
       service: node
+    ports:
+     - "${NG_PORT}:4200"
   mysql:
     extends:
         file: docker-compose.base.yml

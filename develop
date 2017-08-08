@@ -11,6 +11,7 @@ export XDEBUG_HOST=$(ipconfig getifaddr en1)
 # Other env variables
 export APP_ENV=${APP_ENV:-local}
 export APP_PORT=${APP_PORT:-80}
+export NG_PORT=${NG_PORT:-4200}
 export DB_PORT=${DB_PORT:-3306}
 export DB_ROOT_PASS=${DB_ROOT_PASS:-secret}
 export DB_NAME=${DB_NAME:-helpspot}
