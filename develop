@@ -76,10 +76,11 @@ if [ $# -gt 0 ];then
     elif [ "$1" == "ng" ]; then
         shift 1
 	if [ "$1" == "serve" ]; then
+	    shift 1
             $COMPOSE run --rm --publish=4200:4200 $TTY \
                 -w /var/www/html \
                 node \
-                ng --host=0.0.0.0 "$@"
+                ng serve --host=0.0.0.0 "$@"
 	else
             $COMPOSE run --rm $TTY \
                 -w /var/www/html \
