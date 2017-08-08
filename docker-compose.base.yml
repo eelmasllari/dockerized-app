@@ -4,7 +4,7 @@ services:
     build:
       context: ./docker/app
       dockerfile: Dockerfile
-    image: shippingdocker.com/app
+    image: shippingdocker.com/app-ng
     volumes:
      - .:/var/www/html
     networks:
