@@ -75,10 +75,17 @@ if [ $# -gt 0 ];then
     # from our node container
     elif [ "$1" == "ng" ]; then
         shift 1
-        $COMPOSE run --rm $TTY \
-            -w /var/www/html \
-            node \
-            ng "$@"
+	if [ "$1" == "serve" ]; then
+            $COMPOSE run --rm --publish=4200:4200 $TTY \
+                -w /var/www/html \
+                node \
+                ng --host=0.0.0.0 "$@"
+	else
+            $COMPOSE run --rm $TTY \
+                -w /var/www/html \
+                node \
+                ng "$@"
+	fi
 
     # If "gulp" is used, run gulp
     # from our node container
